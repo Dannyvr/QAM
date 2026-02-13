@@ -1,20 +1,21 @@
-# Grover Algorithm - Depth Explosion Demo
+# QRASP Algorithm - Grover + QRAM Benchmarks
 
-Este proyecto implementa una demostración simple del algoritmo de Grover usando Qiskit, mostrando cómo la profundidad del circuito aumenta con las iteraciones.
+Este repositorio contiene prototipos y benchmarks para comparar la arquitectura QRASP contra el modelo estandar, usando variantes del algoritmo de Grover y modelos de QRAM.
 
 ## Descripción
 
-El código implementa el algoritmo de Grover para buscar el estado |11⟩ en un sistema de 2 qubits. Incluye:
+Incluye tres componentes principales:
 
-- **Oráculo**: Marca el estado objetivo |11⟩ usando una compuerta CZ
-- **Difusor**: Amplifica la amplitud del estado marcado
-- **Análisis**: Muestra la profundidad del circuito y el número de compuertas CNOT para diferentes iteraciones
+- **Demo de Grover (2 qubits)**: Analiza la profundidad del circuito y CNOTs por iteraciones
+- **Benchmark QRASP vs STD**: Mide CNOTs, profundidad y fidelidad con ruido simulado
+- **Benchmark QRAM**: Compara QLOAD lineal vs bucket brigade con metrica Z
 
 ## Requisitos
 
 - Python 3.8 o superior
 - Qiskit
 - Qiskit Aer
+- Qiskit IBM Runtime (fake providers)
 
 ## Instalación
 
@@ -41,24 +42,34 @@ El código implementa el algoritmo de Grover para buscar el estado |11⟩ en un 
 
 ## Uso
 
-Ejecuta el script principal:
+Ejecuta los scripts principales:
 
 ```bash
 python src/grover_demo.py
+python src/grover_stress.py
+python src/qrasp_prototype.py
 ```
 
 ## Resultados Esperados
 
-El programa mostrará la profundidad del circuito y el número de compuertas CNOT para 1, 3 y 5 iteraciones del algoritmo de Grover, demostrando cómo aumenta la complejidad del circuito.
+Los programas generan reportes por consola y archivos CSV/PNG con los resultados:
+
+- grover_demo: profundidad y CNOTs para varias iteraciones
+- grover_stress: resultados en resultados_investigacion_etapa1.csv y analisis_superioridad_qrasp_final.png
+- qrasp_prototype: resultados en benchmarking_qram_etapa2.csv y qram_analysis_with_z.png
 
 ## Estructura del Proyecto
 
 ```
-grover-algorithm/
+qrasp-algorithm/
 ├── README.md           # Este archivo
 ├── requirements.txt    # Dependencias del proyecto
+├── resultados_investigacion_etapa1.csv
+├── benchmarking_qram_etapa2.csv
 └── src/
-    └── grover_demo.py  # Script principal con la implementación de Grover
+   ├── grover_demo.py       # Demo Grover 2 qubits
+   ├── grover_stress.py     # Benchmark QRASP vs STD (ruido simulado)
+   └── qrasp_prototype.py   # Benchmark QRAM (lineal vs bucket brigade)
 ```
 
 ## Autor

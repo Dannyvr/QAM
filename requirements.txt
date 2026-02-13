@@ -12,3 +12,6 @@ matplotlib>=3.5.0
 
 # Manejo de datos para análisis de resultados
 pandas>=1.5.0
+
+# Calculo numerico
+numpy>=1.23.0
