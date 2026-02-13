@@ -1,0 +1,14 @@
+# Qiskit - Framework de computación cuántica
+qiskit>=1.0.0
+
+# Qiskit Aer - Simulador cuántico
+qiskit-aer>=0.13.0
+
+# Qiskit IBM Runtime - Fake providers y ejecución en hardware IBM
+qiskit-ibm-runtime>=0.20.0
+
+# Dependencias opcionales para visualización
+matplotlib>=3.5.0
+
+# Manejo de datos para análisis de resultados
+pandas>=1.5.0
