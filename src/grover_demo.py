@@ -11,13 +11,7 @@ from qiskit_aer import AerSimulator
 
 def grover_circuit(iterations=1):
     """
-    Crea un circuito cuántico que implementa el algoritmo de Grover.
-    
-    Args:
-        iterations (int): Número de iteraciones del algoritmo de Grover
-        
-    Returns:
-        QuantumCircuit: Circuito cuántico con el algoritmo de Grover
+
     """
     qc = QuantumCircuit(2)
     
